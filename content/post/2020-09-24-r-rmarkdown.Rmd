@@ -1,0 +1,60 @@
+---
+title: "ces2019_web Data Analysis"
+author: "Runqi Bi"
+date: 2020-09-24T21:13:14-05:00
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+devtools::install_github("hodgettsp/cesR")
+library(cesR)
+library(dplyr)
+library(labelled)
+```
+
+# Abstract
+This CES study is used to gather Canadians' attitude about the federal election in 2019.
+
+# Introduction
+This Canadian Election Study: ces2019_web is an online survey which collect the basic information about people and their attitude to different parties and governement. This survey is to study the reason why people vote for a specific party, and what feature of people will affect the vote result.
+I generated a geom_bar which shows the count of people of different education category. I found that most people in our data set are well educated. Most of them are over college and Bachelor's degree.
+In the paper, we first showed how we get the data, then we discussed the data set we use, and finally we did data analysis using ggplot and discussed the graph we generated. The weakness of this data set is that there are too many data with NA, which is meaningless.
+
+```{r}
+get_cescodes()
+get_ces("ces2019_web")
+ces2019_web <- to_factor(ces2019_web)
+```
+
+# Data discussion
+The ces2019_web dataset is collected from Canadian citizens and permanent residents at least 18 years old in 2019. The columns include candidates' citizenship, age, gender, living province, education degree, the main issue they are interested in, different attitude to parties about some issues, voting plan.
+
+# Graph
+```{r}
+get_cescodes()
+get_ces("ces2019_web")
+ces2019_web <- to_factor(ces2019_web)
+library("tidyverse")
+ces2019_web %>% ggplot(aes(x=cps19_education)) + geom_bar() + coord_flip()
+```
+
+# Graph discussion
+From this graph, we can see the people who voted mostly have over Bachelor's degree and college degree. People who only have elementary school or high school degree takes very small percentage of the data set. From here, we know our result is mainly from those people who is knowledgeable.
+
+# References
+- Wickham et al., (2019). Welcome to the tidyverse. Journal of Open
+  Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
+- Yihui Xie (2020). blogdown: Create Blogs and Websites with R Markdown.
+  R package version 0.20.
+- Hadley Wickham, Jim Hester and Winston Chang (2020). devtools: Tools
+  to Make Developing R Packages Easier. https://devtools.r-lib.org/,
+  https://github.com/r-lib/devtools.
+- Paul A. Hodgetts and Rohan Alexander (2020). cesR: Access the CES
+  Datasets a Little Easier.. R package version 0.1.0.
+- Hadley Wickham, Romain François, Lionel Henry and Kirill Müller
+  (2020). dplyr: A Grammar of Data Manipulation.
+  https://dplyr.tidyverse.org, https://github.com/tidyverse/dplyr.
+- Joseph Larmarange (2020). labelled: Manipulating Labelled Data. R
+  package version 2.7.0. https://CRAN.R-project.org/package=labelled

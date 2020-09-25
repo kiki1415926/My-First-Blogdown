@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Runqi&#39;s website</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Runqi&#39;s website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Sep 2020 21:13:14 -0500</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ces2019_web Data Analysis</title>
+      <link>/2020/09/24/ces2019_web-data-analysis/</link>
+      <pubDate>Thu, 24 Sep 2020 21:13:14 -0500</pubDate>
+      
+      <guid>/2020/09/24/ces2019_web-data-analysis/</guid>
+      <description>Abstract This CES study is used to gather Canadians’ attitude about the federal election in 2019.
+ Introduction This Canadian Election Study: ces2019_web is an online survey which collect the basic information about people and their attitude to different parties and governement. This survey is to study the reason why people vote for a specific party, and what feature of people will affect the vote result. I generated a geom_bar which shows the count of people of different education category.</description>
+    </item>
+    
+  </channel>
+</rss>
